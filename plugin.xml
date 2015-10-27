@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="in.lucasdup.bringtofront" version="0.0.1">
+	<name>Bring to Front</name>
+	<description>Brings current activity to front</description>
+	<author>Lucas Dupin</author>
+	<license>Apache 2.0</license>
+	<keywords>cordova,android,activity,foreground</keywords>
+	<engines>
+		<engine name="cordova-android" version=">=4.0.0-dev" />
+	</engines>
+	<platform name="android">
+		<source-file src="src/android/BringToFront.java"
+                target-dir="src/in/lucasdup/bringtofront" />
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="bringtofront">
+				<param name="android-package" value="in.lucasdup.bringtofront.BringToFront" />
+			</feature>
+		</config-file>
+		<js-module src="www/bring-to-front.js" name="BringToFront">
+			<clobbers target="plugins.bringtofront" />
+		</js-module>
+	</platform>
+</plugin>
